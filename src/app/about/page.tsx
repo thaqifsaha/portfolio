@@ -228,16 +228,16 @@ export default function About() {
                           <Row
                             border="neutral-medium"
                             radius="m"
-                            padding="4"
-                            minWidth="32"
-                            height="32"
                             horizontal="center"
                             vertical="center"
+                            style={{ width: "40px", height: "40px", flexShrink: 0, overflow: "hidden" }}
                           >
                             <Media
                               radius="s"
                               objectFit="contain"
-                              sizes="32"
+                              fillWidth
+                              aspectRatio="1"
+                              sizes="40px"
                               alt={`${experience.company} logo`}
                               src={experience.logo}
                             />
@@ -307,16 +307,16 @@ export default function About() {
                         <Row
                           border="neutral-medium"
                           radius="m"
-                          padding="4"
-                          minWidth="32"
-                          height="32"
                           horizontal="center"
                           vertical="center"
+                          style={{ width: "40px", height: "40px", flexShrink: 0, overflow: "hidden" }}
                         >
                           <Media
                             radius="s"
                             objectFit="contain"
-                            sizes="32"
+                            fillWidth
+                            aspectRatio="1"
+                            sizes="40px"
                             alt={`${institution.name} logo`}
                             src={institution.logo}
                           />
@@ -360,14 +360,17 @@ export default function About() {
                           tag.image ? (
                             <Tag key={`${skill.title}-${tagIndex}`} size="l">
                               <Row gap="8" vertical="center">
-                                <Media
-                                  radius="xs"
-                                  objectFit="contain"
-                                  sizes="16"
-                                  alt={`${tag.name} logo`}
-                                  src={tag.image}
-                                  style={{ width: "16px", height: "16px" }}
-                                />
+                                <Row style={{ width: "16px", height: "16px", flexShrink: 0, overflow: "hidden" }}>
+                                  <Media
+                                    radius="xs"
+                                    objectFit="contain"
+                                    fillWidth
+                                    aspectRatio="1"
+                                    sizes="16px"
+                                    alt={`${tag.name} logo`}
+                                    src={tag.image}
+                                  />
+                                </Row>
                                 {tag.name}
                               </Row>
                             </Tag>
