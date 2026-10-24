@@ -2,7 +2,6 @@ import {
   Avatar,
   Button,
   Column,
-  Grid,
   Heading,
   Icon,
   IconButton,
@@ -15,6 +14,7 @@ import {
 } from "@once-ui-system/core";
 import { baseURL, about, person, social } from "@/resources";
 import TableOfContents from "@/components/about/TableOfContents";
+import { SkillsScroller } from "@/components/about/SkillsScroller";
 import styles from "@/components/about/about.module.scss";
 import React from "react";
 
@@ -361,47 +361,9 @@ export default function About() {
                   {about.specialties.description}
                 </Text>
               )}
-              <Grid columns="3" s={{ columns: "2" }} gap="12" fillWidth marginBottom="40">
-                {about.specialties.items.map((item, index) => (
-                  <Column
-                    key={`${item.name}-${index}`}
-                    border="neutral-medium"
-                    radius="m"
-                    overflow="hidden"
-                    title={item.name}
-                    aria-label={item.name}
-                  >
-                    <Row
-                      fillWidth
-                      horizontal="center"
-                      vertical="center"
-                      padding="16"
-                      style={{ aspectRatio: "1", background: "#ffffff" }}
-                    >
-                      {item.image ? (
-                        <Media
-                          fillWidth
-                          objectFit="contain"
-                          sizes="160px"
-                          alt={`${item.name} logo`}
-                          src={item.image}
-                        />
-                      ) : item.icon ? (
-                        <Icon name={item.icon} size="xl" />
-                      ) : (
-                        <Text variant="label-default-s" align="center" onBackground="neutral-strong">
-                          {item.name}
-                        </Text>
-                      )}
-                    </Row>
-                    <Row fillWidth horizontal="center" paddingY="8" paddingX="4" background="neutral-alpha-weak">
-                      <Text variant="label-default-s" align="center" onBackground="neutral-weak">
-                        {item.name}
-                      </Text>
-                    </Row>
-                  </Column>
-                ))}
-              </Grid>
+              <Row fillWidth marginBottom="40">
+                <SkillsScroller items={about.specialties.items} />
+              </Row>
             </>
           )}
 

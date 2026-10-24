@@ -1,0 +1,122 @@
+.wrapper {
+  position: relative;
+}
+
+.track {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  touch-action: pan-x;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  cursor: grab;
+  padding: 8px 4px;
+  list-style: none;
+  margin: 0;
+
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 24px,
+    #000 calc(100% - 24px),
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 24px,
+    #000 calc(100% - 24px),
+    transparent 100%
+  );
+}
+
+.track::-webkit-scrollbar {
+  display: none;
+}
+
+.track.dragging {
+  cursor: grabbing;
+  scroll-snap-type: none;
+}
+
+.tile {
+  position: relative;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  width: 104px;
+  height: 104px;
+  padding: 16px;
+  margin: 0;
+  list-style: none;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+  will-change: transform;
+}
+
+.tile:hover,
+.tile:focus-visible {
+  transform: translateY(-4px) scale(1.08);
+  z-index: 1;
+}
+
+.tile:focus-visible {
+  outline: 2px solid var(--brand-solid-strong, #3b82f6);
+  outline-offset: 2px;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  transition: opacity 200ms ease;
+}
+
+.arrowLeft {
+  left: -4px;
+}
+
+.arrowRight {
+  right: -4px;
+}
+
+.arrowHidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .tile {
+    width: 76px;
+    height: 76px;
+    padding: 10px;
+  }
+
+  .arrow {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    scroll-behavior: auto;
+  }
+
+  .tile {
+    transition: none;
+  }
+
+  .tile:hover,
+  .tile:focus-visible {
+    transform: none;
+  }
+}
