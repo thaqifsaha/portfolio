@@ -191,36 +191,20 @@ export interface About extends BasePageConfig {
       description: React.ReactNode;
     }>;
   };
-  /** Technical skills section */
-  technical: {
-    /** Whether to display technical skills section */
+  /** Specialties section: a flat grid of tools/languages/technologies, shown as logo tiles */
+  specialties: {
+    /** Whether to display the specialties section */
     display: boolean;
-    /** Title for the technical skills section */
+    /** Title for the specialties section */
     title: string;
-    /** List of technical skills */
-    skills: Array<{
-      /** Skill title */
-      title: string;
-      /** Skill description */
-      description?: React.ReactNode;
-      /** Skill tags */
-      tags?: Array<{
-        name: string;
-        icon?: IconName;
-        /** Path to a logo image, used instead of `icon` when no registered icon fits (e.g. programming language logos) */
-        image?: string;
-      }>;
-      /** Images related to the skill */
-      images?: Array<{
-        /** Image source path */
-        src: string;
-        /** Image alt text */
-        alt: string;
-        /** Image width ratio */
-        width: number;
-        /** Image height ratio */
-        height: number;
-      }>;
+    /** Optional description shown above the grid */
+    description?: React.ReactNode;
+    /** Flat list of specialties — no sub-categories */
+    items: Array<{
+      name: string;
+      icon?: IconName;
+      /** Path to a logo image, used instead of `icon` when no registered icon fits (e.g. programming language logos) */
+      image?: string;
     }>;
   };
   /** Certifications section */

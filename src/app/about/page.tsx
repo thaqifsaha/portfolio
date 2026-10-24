@@ -2,6 +2,7 @@ import {
   Avatar,
   Button,
   Column,
+  Grid,
   Heading,
   Icon,
   IconButton,
@@ -45,9 +46,9 @@ export default function About() {
       items: about.studies.institutions.map((institution) => institution.name),
     },
     {
-      title: about.technical.title,
-      display: about.technical.display,
-      items: about.technical.skills.map((skill) => skill.title),
+      title: about.specialties.title,
+      display: about.specialties.display,
+      items: [],
     },
     {
       title: about.certifications.title,
@@ -345,84 +346,62 @@ export default function About() {
             </>
           )}
 
-          {about.technical.display && (
+          {about.specialties.display && (
             <>
               <Heading
                 as="h2"
-                id={about.technical.title}
+                id={about.specialties.title}
                 variant="display-strong-s"
-                marginBottom="40"
+                marginBottom="m"
               >
-                {about.technical.title}
+                {about.specialties.title}
               </Heading>
-              <Column fillWidth gap="l">
-                {about.technical.skills.map((skill, index) => (
-                  <Column key={`${skill}-${index}`} fillWidth gap="4">
-                    <Text id={skill.title} variant="heading-strong-l">
-                      {skill.title}
-                    </Text>
-                    <Text variant="body-default-m" onBackground="neutral-weak">
-                      {skill.description}
-                    </Text>
-                    {skill.tags && skill.tags.length > 0 && (
-                      <Row wrap gap="12" paddingTop="8">
-                        {skill.tags.map((tag, tagIndex) => (
-                          <Row
-                            key={`${skill.title}-${tagIndex}`}
-                            title={tag.name}
-                            aria-label={tag.name}
-                            radius="m"
-                            horizontal="center"
-                            vertical="center"
-                            style={{ width: "64px", height: "64px", flexShrink: 0, overflow: "hidden" }}
-                          >
-                            {tag.image ? (
-                              <Row style={{ width: "40px", height: "40px", flexShrink: 0, overflow: "hidden" }}>
-                                <Media
-                                  radius="xs"
-                                  objectFit="contain"
-                                  fillWidth
-                                  aspectRatio="1"
-                                  sizes="40px"
-                                  alt={`${tag.name} logo`}
-                                  src={tag.image}
-                                />
-                              </Row>
-                            ) : tag.icon ? (
-                              <Icon name={tag.icon} size="l" tooltip={tag.name} />
-                            ) : (
-                              <Text variant="label-default-xs" align="center">
-                                {tag.name}
-                              </Text>
-                            )}
-                          </Row>
-                        ))}
-                      </Row>
-                    )}
-                    {skill.images && skill.images.length > 0 && (
-                      <Row fillWidth paddingTop="m" gap="12" wrap>
-                        {skill.images.map((image, index) => (
-                          <Row
-                            key={index}
-                            border="neutral-medium"
-                            radius="m"
-                            minWidth={image.width}
-                            height={image.height}
-                          >
-                            <Media
-                              enlarge
-                              radius="m"
-                              sizes={image.width.toString()}
-                              alt={image.alt}
-                              src={image.src}
-                            />
-                          </Row>
-                        ))}
-                      </Row>
-                    )}
+              {about.specialties.description && (
+                <Text variant="body-default-m" onBackground="neutral-weak" marginBottom="m">
+                  {about.specialties.description}
+                </Text>
+              )}
+              <Grid columns="3" s={{ columns: "2" }} gap="12" fillWidth marginBottom="40">
+                {about.specialties.items.map((item, index) => (
+                  <Column
+                    key={`${item.name}-${index}`}
+                    border="neutral-medium"
+                    radius="m"
+                    overflow="hidden"
+                    title={item.name}
+                    aria-label={item.name}
+                  >
+                    <Row
+                      fillWidth
+                      horizontal="center"
+                      vertical="center"
+                      padding="16"
+                      style={{ aspectRatio: "1", background: "#ffffff" }}
+                    >
+                      {item.image ? (
+                        <Media
+                          fillWidth
+                          objectFit="contain"
+                          sizes="160px"
+                          alt={`${item.name} logo`}
+                          src={item.image}
+                        />
+                      ) : item.icon ? (
+                        <Icon name={item.icon} size="xl" />
+                      ) : (
+                        <Text variant="label-default-s" align="center" onBackground="neutral-strong">
+                          {item.name}
+                        </Text>
+                      )}
+                    </Row>
+                    <Row fillWidth horizontal="center" paddingY="8" paddingX="4" background="neutral-alpha-weak">
+                      <Text variant="label-default-s" align="center" onBackground="neutral-weak">
+                        {item.name}
+                      </Text>
+                    </Row>
                   </Column>
                 ))}
-              </Column>
+              </Grid>
             </>
           )}
 
