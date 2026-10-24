@@ -221,74 +221,79 @@ export default function About() {
               </Heading>
               <Column fillWidth gap="l" marginBottom="40">
                 {about.work.experiences.map((experience, index) => (
-                  <Column key={`${experience.company}-${experience.role}-${index}`} fillWidth>
-                    <Row fillWidth horizontal="between" vertical="end" marginBottom="4">
-                      <Row gap="12" vertical="center">
-                        {experience.logo && (
-                          <Row
-                            border="neutral-medium"
-                            radius="m"
-                            horizontal="center"
-                            vertical="center"
-                            style={{ width: "40px", height: "40px", flexShrink: 0, overflow: "hidden" }}
-                          >
-                            <Media
-                              radius="s"
-                              objectFit="contain"
-                              fillWidth
-                              aspectRatio="1"
-                              sizes="40px"
-                              alt={`${experience.company} logo`}
-                              src={experience.logo}
-                            />
-                          </Row>
-                        )}
+                  <Row
+                    key={`${experience.company}-${experience.role}-${index}`}
+                    fillWidth
+                    border="neutral-medium"
+                    radius="l"
+                    overflow="hidden"
+                    s={{ direction: "column" }}
+                  >
+                    {experience.logo && (
+                      <Row
+                        horizontal="center"
+                        vertical="center"
+                        padding="20"
+                        style={{ width: "140px", flexShrink: 0, background: "#ffffff" }}
+                        s={{ width: "100%" }}
+                      >
+                        <Media
+                          fillWidth
+                          objectFit="contain"
+                          sizes="140px"
+                          alt={`${experience.company} logo`}
+                          src={experience.logo}
+                        />
+                      </Row>
+                    )}
+                    <Column fillWidth padding="20" gap="4">
+                      <Row fillWidth horizontal="between" vertical="end" wrap marginBottom="4">
                         <Text id={experience.company} variant="heading-strong-l">
                           {experience.company}
                         </Text>
+                        <Text variant="heading-default-xs" onBackground="neutral-weak">
+                          {experience.timeframe}
+                        </Text>
                       </Row>
-                      <Text variant="heading-default-xs" onBackground="neutral-weak">
-                        {experience.timeframe}
+                      <Text variant="body-default-s" onBackground="brand-weak" marginBottom="m">
+                        {experience.role}
                       </Text>
-                    </Row>
-                    <Text variant="body-default-s" onBackground="brand-weak" marginBottom="m">
-                      {experience.role}
-                    </Text>
-                    <Column as="ul" gap="16">
-                      {experience.achievements.map(
-                        (achievement: React.ReactNode, index: number) => (
-                          <Text
-                            as="li"
-                            variant="body-default-m"
-                            key={`${experience.company}-${index}`}
-                          >
-                            {achievement}
-                          </Text>
-                        ),
+                      <Column as="ul" gap="16">
+                        {experience.achievements.map(
+                          (achievement: React.ReactNode, index: number) => (
+                            <Text
+                              as="li"
+                              variant="body-default-m"
+                              key={`${experience.company}-${index}`}
+                            >
+                              {achievement}
+                            </Text>
+                          ),
+                        )}
+                      </Column>
+                      {experience.images && experience.images.length > 0 && (
+                        <Row fillWidth paddingTop="m" gap="12" wrap>
+                          {experience.images.map((image, index) => (
+                            <Row
+                              key={index}
+                              border="neutral-medium"
+                              radius="m"
+                              minWidth={image.width}
+                              height={image.height}
+                            >
+                              <Media
+                                enlarge
+                                radius="m"
+                                sizes={image.width.toString()}
+                                alt={image.alt}
+                                src={image.src}
+                              />
+                            </Row>
+                          ))}
+                        </Row>
                       )}
                     </Column>
-                    {experience.images && experience.images.length > 0 && (
-                      <Row fillWidth paddingTop="m" paddingLeft="40" gap="12" wrap>
-                        {experience.images.map((image, index) => (
-                          <Row
-                            key={index}
-                            border="neutral-medium"
-                            radius="m"
-                            minWidth={image.width}
-                            height={image.height}
-                          >
-                            <Media
-                              enlarge
-                              radius="m"
-                              sizes={image.width.toString()}
-                              alt={image.alt}
-                              src={image.src}
-                            />
-                          </Row>
-                        ))}
-                      </Row>
-                    )}
-                  </Column>
+                  </Row>
                 ))}
               </Column>
             </>
@@ -301,41 +306,40 @@ export default function About() {
               </Heading>
               <Column fillWidth gap="l" marginBottom="40">
                 {about.studies.institutions.map((institution, index) => (
-                  <Column key={`${institution.name}-${index}`} fillWidth gap="4">
-                    <Row gap="12" vertical="center">
-                      {institution.logo && (
-                        <Row
-                          border="neutral-medium"
-                          radius="m"
-                          horizontal="center"
-                          vertical="center"
-                          style={{
-                            width: "40px",
-                            height: "40px",
-                            flexShrink: 0,
-                            overflow: "hidden",
-                            background: "#ffffff",
-                          }}
-                        >
-                          <Media
-                            radius="s"
-                            objectFit="contain"
-                            fillWidth
-                            aspectRatio="1"
-                            sizes="40px"
-                            alt={`${institution.name} logo`}
-                            src={institution.logo}
-                          />
-                        </Row>
-                      )}
+                  <Row
+                    key={`${institution.name}-${index}`}
+                    fillWidth
+                    border="neutral-medium"
+                    radius="l"
+                    overflow="hidden"
+                    s={{ direction: "column" }}
+                  >
+                    {institution.logo && (
+                      <Row
+                        horizontal="center"
+                        vertical="center"
+                        padding="20"
+                        style={{ width: "140px", flexShrink: 0, background: "#ffffff" }}
+                        s={{ width: "100%" }}
+                      >
+                        <Media
+                          fillWidth
+                          objectFit="contain"
+                          sizes="140px"
+                          alt={`${institution.name} logo`}
+                          src={institution.logo}
+                        />
+                      </Row>
+                    )}
+                    <Column fillWidth padding="20" gap="4" vertical="center">
                       <Text id={institution.name} variant="heading-strong-l">
                         {institution.name}
                       </Text>
-                    </Row>
-                    <Text variant="heading-default-xs" onBackground="neutral-weak">
-                      {institution.description}
-                    </Text>
-                  </Column>
+                      <Text variant="heading-default-xs" onBackground="neutral-weak">
+                        {institution.description}
+                      </Text>
+                    </Column>
+                  </Row>
                 ))}
               </Column>
             </>
@@ -367,7 +371,6 @@ export default function About() {
                             key={`${skill.title}-${tagIndex}`}
                             title={tag.name}
                             aria-label={tag.name}
-                            border="neutral-medium"
                             radius="m"
                             horizontal="center"
                             vertical="center"

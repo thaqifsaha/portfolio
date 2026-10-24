@@ -146,7 +146,7 @@ const about: About = {
             Penang, Kedah and Perlis.
           </>,
           <>
-            Carried out preventive maintenance for Hospital Kuala Lumpur (HKL) and Jabatan
+            Carried out preventive maintenance as the team leader for Hospital Kuala Lumpur (HKL) and Jabatan
             Perkhidmatan Veterinar Malaysia (JPVM).
           </>,
         ],
@@ -191,17 +191,18 @@ const about: About = {
       {
         title: "Frameworks & web",
         tags: [
-          { name: "Laravel", icon: "laravel" },
-          { name: "Django", icon: "django" },
+          { name: "Laravel", image: "/images/skills/laravel.png" },
+          { name: "Django", image: "/images/skills/django.png" },
         ],
         images: [],
       },
       {
         title: "IoT & hardware",
         tags: [
-          { name: "Internet of Things", icon: "wifi" },
-          { name: "Embedded Systems", icon: "circuitry" },
-          { name: "Node-RED", icon: "nodered" },
+          { name: "Internet of Things", image: "/images/skills/iot.png" },
+          { name: "Embedded Systems", image: "/images/skills/embedded.png" },
+          { name: "Node-RED", image: "/images/skills/node-red.png" },
+          { name: "Arduino IDE", image: "/images/skills/arduino-ide.png" },
         ],
         images: [],
       },
@@ -209,25 +210,27 @@ const about: About = {
         title: "Networking & infrastructure",
         tags: [
           { name: "Computer Networking", icon: "network" },
-          { name: "Linux (Ubuntu)", icon: "ubuntu" },
-          { name: "Docker", icon: "docker" },
-          { name: "Cloudflare", icon: "cloudflare" },
+          { name: "Linux (Ubuntu)", image: "/images/skills/linux.png" },
+          { name: "Docker", image: "/images/skills/docker.png" },
+          { name: "Cloudflare", image: "/images/skills/cloudflare.png" },
+          { name: "Wireshark", image: "/images/skills/wireshark.jpg" },
+          { name: "Packet Tracer", image: "/images/skills/packet-tracer.png" },
         ],
         images: [],
       },
       {
         title: "Databases",
         tags: [
-          { name: "MySQL", icon: "mysql" },
-          { name: "PostgreSQL", icon: "postgresql" },
+          { name: "MySQL", image: "/images/skills/mysql.png" },
+          { name: "PostgreSQL", image: "/images/skills/postgresql.png" },
         ],
         images: [],
       },
       {
         title: "Tools",
         tags: [
-          { name: "Figma", icon: "figma" },
-          { name: "Selenium IDE", icon: "selenium" },
+          { name: "Figma", image: "/images/skills/figma.png" },
+          { name: "Selenium IDE", image: "/images/skills/selenium.png" },
         ],
         images: [],
       },
