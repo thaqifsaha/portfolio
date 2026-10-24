@@ -94,12 +94,24 @@ const about: About = {
         company: "DMG MORI Malaysia Sdn Bhd",
         logo: "/images/experience/DMG/dmg-logo.png",
         timeframe: "Aug 2024 – Sep 2024",
-        role: "Assistant Engineer",
+        role: "Assistant Engineer (Part-time)",
         achievements: [
           <>
-            Supported the installation and commissioning of DMG MORI 5-axis machining centers
-            (DMU 210, DMU 125) and the relocation of a DMC 95 monoBLOCK, for customers including
-            Ultimate Manufacturing Solutions Malaysia (UMS) and Jabil Kulim.
+            Assisted service engineers in the maintenance, repair, and installation of CNC
+            machines, including DMC 95 monoBLOCK, DMU 125 and DMU 210 models, during assignments
+            at Ultimate Manufacturing Solutions Malaysia (UMS) in Penang and Jabil Kulim in Kedah.
+          </>,
+          <>
+            Participated in on-site servicing activities, assisting with machine setup,
+            inspection, and preventive maintenance work.
+          </>,
+          <>
+            Helped with machine relocation, assembly, and installation, ensuring machines were
+            properly set up and ready for operation.
+          </>,
+          <>
+            Supported engineers in installation and commissioning activities, working together
+            with the project engineer during system setup.
           </>,
         ],
         images: [],
@@ -111,12 +123,24 @@ const about: About = {
         role: "IT Technician (Intern)",
         achievements: [
           <>
-            Installed and configured IT equipment across MKN and RELA Malaysia offices in Perak,
-            Penang, Kedah and Perlis.
+            Performed preventive maintenance on PCs, laptops and peripherals across multiple
+            sites, including hospitals and government offices, and installed, configured and
+            deployed PCs, laptops, printers and related hardware for new and existing
+            departments.
           </>,
           <>
-            Carried out preventive maintenance as the team leader for Hospital Kuala Lumpur (HKL) and Jabatan
-            Perkhidmatan Veterinar Malaysia (JPVM).
+            Installed and configured IT equipment across MKN and RELA Malaysia offices in Perak,
+            Penang, Kedah and Perlis, as part of large-scale outstation IT deployment projects
+            across multiple states.
+          </>,
+          <>
+            Served as team leader for a preventive maintenance project at Hospital Kuala Lumpur
+            (HKL), completing an inspection of 100+ PCs in 4 days against an initial 2-week
+            estimate, with a team of five.
+          </>,
+          <>
+            Carried out preventive maintenance across multiple offices of Jabatan Perkhidmatan
+            Veterinar Negeri Selangor (JPVM), including several in rural and farmland areas.
           </>,
         ],
         images: [],
@@ -128,12 +152,12 @@ const about: About = {
     title: "Studies",
     institutions: [
       {
-        name: "Universiti Tun Hussein Onn Malaysia (UTHM)",
+        name: "Universiti Tun Hussein Onn Malaysia",
         logo: "/images/education/uthm-logo.png",
         description: <>Bachelor of Computer Science (Software Engineering) with Honours — CGPA 3.64.</>,
       },
       {
-        name: "Politeknik Muadzam Shah (PMS)",
+        name: "Politeknik Muadzam Shah",
         logo: "/images/education/pms-logo.png",
         description: <>Diploma in Information Technology (Digital Technology) — CGPA 3.69.</>,
       },
@@ -200,6 +224,7 @@ const about: About = {
       { src: "/images/hobby/IMG_5561.JPG", alt: "Car photo" },
       { src: "/images/hobby/IMG_6986.JPG", alt: "Car photo" },
       { src: "/images/hobby/IMG_8552.JPG", alt: "Car photo" },
+      { src: "/images/hobby/IMG_5550.JPG", alt: "Car photo" },
     ],
   },
 };
