@@ -2,6 +2,7 @@ import {
   Avatar,
   Button,
   Column,
+  Grid,
   Heading,
   Icon,
   IconButton,
@@ -14,7 +15,6 @@ import {
 } from "@once-ui-system/core";
 import { baseURL, about, person, social } from "@/resources";
 import TableOfContents from "@/components/about/TableOfContents";
-import { SkillsScroller } from "@/components/about/SkillsScroller";
 import styles from "@/components/about/about.module.scss";
 import React from "react";
 
@@ -361,9 +361,37 @@ export default function About() {
                   {about.specialties.description}
                 </Text>
               )}
-              <Row fillWidth marginBottom="40">
-                <SkillsScroller items={about.specialties.items} />
-              </Row>
+              <Grid columns="7" s={{ columns: "4" }} gap="12" fillWidth marginBottom="40">
+                {about.specialties.items.map((item, index) => (
+                  <Column
+                    key={`${item.name}-${index}`}
+                    title={item.name}
+                    aria-label={item.name}
+                    border="neutral-alpha-medium"
+                    background="neutral-alpha-weak"
+                    radius="m"
+                    horizontal="center"
+                    vertical="center"
+                    padding="12"
+                    style={{ aspectRatio: "1", overflow: "hidden" }}
+                  >
+                    {item.image ? (
+                      <Row style={{ width: "100%", height: "100%", overflow: "hidden" }}>
+                        <Media
+                          fillWidth
+                          objectFit="contain"
+                          aspectRatio="1"
+                          sizes="120px"
+                          alt={item.name}
+                          src={item.image}
+                        />
+                      </Row>
+                    ) : item.icon ? (
+                      <Icon name={item.icon} size="xl" />
+                    ) : null}
+                  </Column>
+                ))}
+              </Grid>
             </>
           )}
 

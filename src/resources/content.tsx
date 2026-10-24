@@ -139,7 +139,7 @@ const about: About = {
         company: "Sigma Rectrix Systems (M) Sdn Bhd",
         logo: "/images/experience/sigma/sigma-logo.png",
         timeframe: "Mar 2022 – Jul 2022",
-        role: "IT Technician",
+        role: "IT Technician (Intern)",
         achievements: [
           <>
             Installed and configured IT equipment across MKN and RELA Malaysia offices in Perak,
