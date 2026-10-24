@@ -182,7 +182,7 @@ const about: About = {
       { name: "JavaScript", image: "/images/skills/language/javascript/javascript.svg" },
       { name: "HTML", image: "/images/skills/language/html/html.svg" },
       { name: "CSS", image: "/images/skills/language/css/css.svg" },
-      { name: "Laravel", image: "/images/skills/laravel.jpg" },
+      { name: "Laravel", image: "/images/skills/laravel.png" },
       { name: "Django", image: "/images/skills/django.png" },
       { name: "Node-RED", image: "/images/skills/node-red.png" },
       { name: "Arduino IDE", image: "/images/skills/arduino-ide.png" },
