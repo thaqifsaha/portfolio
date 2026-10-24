@@ -368,12 +368,11 @@ export default function About() {
                     title={item.name}
                     aria-label={item.name}
                     border="neutral-alpha-medium"
-                    background="neutral-alpha-weak"
                     radius="m"
                     horizontal="center"
                     vertical="center"
                     padding="12"
-                    style={{ aspectRatio: "1", overflow: "hidden" }}
+                    style={{ aspectRatio: "1", overflow: "hidden", background: "#ffffff" }}
                   >
                     {item.image ? (
                       <Row style={{ width: "100%", height: "100%", overflow: "hidden" }}>
