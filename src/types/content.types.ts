@@ -91,27 +91,6 @@ export interface BasePageConfig {
 }
 
 /**
- * Home page configuration.
- */
-export interface Home extends BasePageConfig {
-  /** The image to be displayed in metadata
-   *
-   * The image needs to be put inside `/public/images/` directory
-   */
-  image: `/images/${string}` | string;
-  /** The headline of the home page */
-  headline: React.ReactNode;
-  /** Featured badge, which appears above the headline */
-  featured: {
-    display: boolean;
-    title: React.ReactNode;
-    href: string;
-  };
-  /** The sub text which appears below the headline */
-  subline: React.ReactNode;
-}
-
-/**
  * About page configuration.
  * @description Configuration for the About page, including sections for table of contents, avatar, calendar, introduction, work experience, studies, and technical skills.
  */

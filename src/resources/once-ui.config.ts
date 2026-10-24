@@ -11,13 +11,12 @@ import {
   SocialSharingConfig,
   StyleConfig,
 } from "@/types";
-import { home, person, social } from "./content";
+import { about, person, social } from "./content";
 
 const baseURL: string = "https://portfolio-eight-chi-8jaezzvbxl.vercel.app";
 
 const routes: RoutesConfig = {
   "/": true,
-  "/about": true,
   "/work": true,
   "/blog": false, // disabled for now
   "/gallery": false, // disabled for now — may enable later for car photos
@@ -189,7 +188,7 @@ const schema: SchemaConfig = {
   logo: "",
   type: "Person",
   name: person.name,
-  description: home.description,
+  description: about.description,
   email: person.email,
 };
 

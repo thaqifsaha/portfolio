@@ -1,5 +1,4 @@
-import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
-import { Line, Row, Text } from "@once-ui-system/core";
+import { About, Blog, Gallery, Newsletter, Person, Social, Work } from "@/types";
 
 const person: Person = {
   firstName: "Thaqif",
@@ -47,39 +46,10 @@ const social: Social = [
   },
 ];
 
-const home: Home = {
-  path: "/",
-  image: "/api/og/generate?title=Thaqif%20Saharuddin%27s%20Portfolio",
-  label: "Home",
-  title: `${person.name}'s Portfolio`,
-  description: `Portfolio of ${person.name}, a ${person.role} focused on IoT, embedded systems, networking and full-stack development.`,
-  headline: <>Building where software meets hardware</>,
-  featured: {
-    display: true,
-    title: (
-      <Row gap="12" vertical="center">
-        <strong className="ml-4">APMS</strong>{" "}
-        <Line background="brand-alpha-strong" vert height="20" />
-        <Text marginRight="4" onBackground="brand-medium">
-          Featured case study
-        </Text>
-      </Row>
-    ),
-    href: "/work/aviation-performance-monitoring-system",
-  },
-  subline: (
-    <>
-      I'm {person.firstName}, a {person.role.toLowerCase()} who likes building where software
-      meets hardware — IoT, embedded systems and networking. <br /> Always keen to learn new
-      technologies, and happiest with hands-on, physical work.
-    </>
-  ),
-};
-
 const about: About = {
-  path: "/about",
+  path: "/",
   label: "About",
-  title: `About – ${person.name}`,
+  title: `${person.name}'s Portfolio`,
   description: `Meet ${person.name}, ${person.role} from ${person.locationLabel ?? person.location}`,
   tableOfContent: {
     display: true,
@@ -247,4 +217,4 @@ const gallery: Gallery = {
   images: [],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+export { person, social, newsletter, about, blog, work, gallery };
