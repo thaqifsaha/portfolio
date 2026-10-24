@@ -1,0 +1,58 @@
+---
+title: "Aviation Performance Monitoring System (APMS) with a 6-DoF Motion Platform"
+subtitle: "Final Year Project at UTHM, built for industry partner Aerosim.my"
+publishedAt: "2026-07-01"
+summary: "A real-time flight telemetry and decision-support system built on X-Plane 11, paired with Arduino-based cockpit instruments and a 6-DoF motion platform."
+images:
+  - "/images/projects/placeholder/placeholder.png"
+tag: "Final Year Project"
+category: "software"
+---
+
+## Problem
+
+Flight simulator sessions generate rich telemetry, but X-Plane 11 has no built-in way to capture, visualize, or act on that data in real time outside the simulator itself. Aerosim.my needed a way to turn raw simulator telemetry into decision-support dashboards and drive physical cockpit hardware from the same data stream.
+
+## What I built
+
+An end-to-end pipeline that listens to X-Plane 11's live flight data, streams it over the network, and feeds both a web-based decision-support dashboard and physical cockpit hardware:
+
+- A Python UDP telemetry listener that taps into X-Plane 11's data output, packaged as a standalone Windows `.exe` with PyInstaller so it runs on the simulator PC without a Python install.
+- Decision-support dashboards built with Laravel, Blade, Tailwind CSS and Alpine.js, with MySQL for storage and Chart.js (zoom/pan enabled) for visualizing telemetry over time.
+- Arduino-based cockpit instruments and integration with a 6-DoF motion platform, driven from the same telemetry stream.
+
+## Architecture
+
+```text
+X-Plane 11 (flight sim)
+       │ UDP telemetry
+       ▼
+Python listener (PyInstaller .exe)
+       │
+       ├──► Laravel + MySQL backend ──► Dashboard (Blade, Alpine.js, Chart.js)
+       │
+       └──► Arduino cockpit instruments + 6-DoF motion platform
+```
+
+TODO: replace with a proper architecture diagram image.
+
+## Stack
+
+- **Telemetry**: Python, UDP sockets, PyInstaller
+- **Backend/dashboard**: Laravel, Blade, Alpine.js, Tailwind CSS, MySQL, Chart.js
+- **Hardware**: Arduino, 6-DoF motion platform
+- **Hosting**: Railway, behind Cloudflare
+
+## Challenges & fixes
+
+- **Mixed content over HTTPS behind a proxy**: Cloudflare terminated TLS in front of the app, which caused mixed-content issues for assets served over plain HTTP. Fixed by making sure all internal asset/API calls respected the forwarded protocol.
+- **Blocked SMTP ports**: Railway's network blocks outbound SMTP ports, which broke transactional email. Fixed by switching to an HTTP-based mail API instead of SMTP.
+- **Ephemeral storage**: Railway's default filesystem is ephemeral, so uploaded/generated files didn't persist across deploys. Fixed by attaching a persistent volume.
+
+## Outcome
+
+The system was exhibited at UTHM and drew commercial interest from Aerosim.my. A paper based on this work was submitted to the AITCS journal.
+
+## Images
+
+TODO: add real screenshots/photos of the dashboard, cockpit instruments and motion platform.
