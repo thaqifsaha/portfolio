@@ -199,8 +199,8 @@ const about: About = {
       {
         title: "IoT & hardware",
         tags: [
-          { name: "Internet of Things" },
-          { name: "Embedded Systems" },
+          { name: "Internet of Things", icon: "wifi" },
+          { name: "Embedded Systems", icon: "circuitry" },
           { name: "Node-RED", icon: "nodered" },
         ],
         images: [],
@@ -208,7 +208,7 @@ const about: About = {
       {
         title: "Networking & infrastructure",
         tags: [
-          { name: "Computer Networking" },
+          { name: "Computer Networking", icon: "network" },
           { name: "Linux (Ubuntu)", icon: "ubuntu" },
           { name: "Docker", icon: "docker" },
           { name: "Cloudflare", icon: "cloudflare" },

@@ -309,7 +309,13 @@ export default function About() {
                           radius="m"
                           horizontal="center"
                           vertical="center"
-                          style={{ width: "40px", height: "40px", flexShrink: 0, overflow: "hidden" }}
+                          style={{
+                            width: "40px",
+                            height: "40px",
+                            flexShrink: 0,
+                            overflow: "hidden",
+                            background: "#ffffff",
+                          }}
                         >
                           <Media
                             radius="s"
@@ -355,31 +361,39 @@ export default function About() {
                       {skill.description}
                     </Text>
                     {skill.tags && skill.tags.length > 0 && (
-                      <Row wrap gap="8" paddingTop="8">
-                        {skill.tags.map((tag, tagIndex) =>
-                          tag.image ? (
-                            <Tag key={`${skill.title}-${tagIndex}`} size="l">
-                              <Row gap="8" vertical="center">
-                                <Row style={{ width: "16px", height: "16px", flexShrink: 0, overflow: "hidden" }}>
-                                  <Media
-                                    radius="xs"
-                                    objectFit="contain"
-                                    fillWidth
-                                    aspectRatio="1"
-                                    sizes="16px"
-                                    alt={`${tag.name} logo`}
-                                    src={tag.image}
-                                  />
-                                </Row>
-                                {tag.name}
+                      <Row wrap gap="12" paddingTop="8">
+                        {skill.tags.map((tag, tagIndex) => (
+                          <Row
+                            key={`${skill.title}-${tagIndex}`}
+                            title={tag.name}
+                            aria-label={tag.name}
+                            border="neutral-medium"
+                            radius="m"
+                            horizontal="center"
+                            vertical="center"
+                            style={{ width: "64px", height: "64px", flexShrink: 0, overflow: "hidden" }}
+                          >
+                            {tag.image ? (
+                              <Row style={{ width: "40px", height: "40px", flexShrink: 0, overflow: "hidden" }}>
+                                <Media
+                                  radius="xs"
+                                  objectFit="contain"
+                                  fillWidth
+                                  aspectRatio="1"
+                                  sizes="40px"
+                                  alt={`${tag.name} logo`}
+                                  src={tag.image}
+                                />
                               </Row>
-                            </Tag>
-                          ) : (
-                            <Tag key={`${skill.title}-${tagIndex}`} size="l" prefixIcon={tag.icon}>
-                              {tag.name}
-                            </Tag>
-                          ),
-                        )}
+                            ) : tag.icon ? (
+                              <Icon name={tag.icon} size="l" tooltip={tag.name} />
+                            ) : (
+                              <Text variant="label-default-xs" align="center">
+                                {tag.name}
+                              </Text>
+                            )}
+                          </Row>
+                        ))}
                       </Row>
                     )}
                     {skill.images && skill.images.length > 0 && (

@@ -20,6 +20,9 @@ import {
   PiGridFourDuotone,
   PiBookBookmarkDuotone,
   PiImageDuotone,
+  PiWifiHighDuotone,
+  PiCircuitryDuotone,
+  PiNetworkDuotone,
 } from "react-icons/pi";
 
 import {
@@ -91,6 +94,9 @@ export const iconLibrary = {
   postgresql: SiPostgresql,
   selenium: SiSelenium,
   credly: SiCredly,
+  wifi: PiWifiHighDuotone,
+  circuitry: PiCircuitryDuotone,
+  network: PiNetworkDuotone,
   facebook: FaFacebook,
   pinterest: FaPinterest,
   whatsapp: FaWhatsapp,
