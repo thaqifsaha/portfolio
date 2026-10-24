@@ -13,8 +13,7 @@ import {
 } from "@/types";
 import { home, person, social } from "./content";
 
-// TODO: replace with your real domain once deployed on Vercel - it's used for SEO in meta tags and schema
-const baseURL: string = "https://thaqif-saharuddin.vercel.app";
+const baseURL: string = "https://portfolio-eight-chi-8jaezzvbxl.vercel.app";
 
 const routes: RoutesConfig = {
   "/": true,

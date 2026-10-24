@@ -6,11 +6,11 @@ const person: Person = {
   lastName: "Saharuddin",
   name: `Thaqif Saharuddin`,
   role: "Software Engineer",
-  avatar: "/images/avatar.jpg", // TODO: replace with a real headshot — this is still the template's stock photo
+  avatar: "/images/thaqif.png",
   email: "thaqif237@gmail.com",
   location: "Asia/Kuala_Lumpur", // IANA time zone — used for the live clock
   locationLabel: "Selangor, Malaysia", // human-readable location shown in the UI
-  languages: [], // TODO: add if you want spoken languages listed
+  languages: ["Malay (native)", "English"],
   locale: "en",
 };
 
@@ -110,7 +110,7 @@ const about: About = {
       {
         company: "TUSAS Malaysia Sdn Bhd",
         logo: "/images/experience/tusas/tusas-logo.jpg",
-        timeframe: "TODO: start date – Present",
+        timeframe: "Jul 2026 – Present",
         role: "Software Design Trainee & Full-Stack Developer (Intern)",
         achievements: [
           <>
