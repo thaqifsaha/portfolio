@@ -189,7 +189,6 @@ const about: About = {
       </>
     ),
     images: [
-      { src: "/images/hobby/E6F8AE0C-6991-41D1-875B-A51D9667AE6B.jpg", alt: "Car photo" },
       { src: "/images/hobby/IMG_0320.jpeg", alt: "Car photo" },
       { src: "/images/hobby/IMG_0349.jpeg", alt: "Car photo" },
       { src: "/images/hobby/IMG_0371.jpeg", alt: "Car photo" },
