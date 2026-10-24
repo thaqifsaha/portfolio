@@ -1,6 +1,7 @@
 import {
   Avatar,
   Button,
+  Carousel,
   Column,
   Grid,
   Heading,
@@ -248,14 +249,14 @@ export default function Home() {
                       </Row>
                     )}
                     <Column fillWidth padding="20" gap="4">
-                      <Row fillWidth horizontal="between" vertical="end" wrap marginBottom="4">
+                      <Column fillWidth gap="2" marginBottom="4">
                         <Text id={experience.company} variant="heading-strong-l">
                           {experience.company}
                         </Text>
                         <Text variant="heading-default-xs" onBackground="neutral-weak">
                           {experience.timeframe}
                         </Text>
-                      </Row>
+                      </Column>
                       <Text variant="body-default-s" onBackground="brand-weak" marginBottom="m">
                         {experience.role}
                       </Text>
@@ -438,9 +439,27 @@ export default function Home() {
               <Heading as="h2" id={about.outside.title} variant="display-strong-s" marginBottom="m">
                 {about.outside.title}
               </Heading>
-              <Text variant="body-default-m" onBackground="neutral-weak" marginBottom="40">
+              <Text
+                variant="body-default-m"
+                onBackground="neutral-weak"
+                marginBottom={about.outside.images && about.outside.images.length > 0 ? "m" : "40"}
+              >
                 {about.outside.description}
               </Text>
+              {about.outside.images && about.outside.images.length > 0 && (
+                <Row fillWidth marginBottom="40">
+                  <Carousel
+                    aspectRatio="16 / 9"
+                    sizes="(max-width: 960px) 100vw, 960px"
+                    radius="l"
+                    items={about.outside.images.map((image) => ({
+                      slide: image.src,
+                      alt: image.alt,
+                    }))}
+                    play={{ auto: true, interval: 10000, controls: true }}
+                  />
+                </Row>
+              )}
             </>
           )}
         </Column>

@@ -87,7 +87,6 @@ const about: About = {
             Currently contributing as a Software Design Trainee and Full-Stack Developer intern,
             working across the design and development lifecycle.
           </>,
-          <>TODO: add specific achievements once confirmed (kept general for confidentiality).</>,
         ],
         images: [],
       },
@@ -185,11 +184,25 @@ const about: About = {
     title: "Outside work",
     description: (
       <>
-        When I'm not building software, I'm probably under a car — fixing them, learning how
-        they work, or just photographing them. Fair warning: bring up cars around me, especially
-        anything that goes brappp, and I will absolutely geek out.
+        When I'm not building software, I'm probably under a car fixing them, learning how
+        they work, or just photographing them. Sometimes I rather do some hands on work, so i can stress both ways; hardware and software.
       </>
     ),
+    images: [
+      { src: "/images/hobby/E6F8AE0C-6991-41D1-875B-A51D9667AE6B.jpg", alt: "Car photo" },
+      { src: "/images/hobby/IMG_0320.jpeg", alt: "Car photo" },
+      { src: "/images/hobby/IMG_0349.jpeg", alt: "Car photo" },
+      { src: "/images/hobby/IMG_0371.jpeg", alt: "Car photo" },
+      { src: "/images/hobby/IMG_0435.jpeg", alt: "Car photo" },
+      { src: "/images/hobby/IMG_0452.jpeg", alt: "Car photo" },
+      { src: "/images/hobby/IMG_0470.jpeg", alt: "Car photo" },
+      { src: "/images/hobby/IMG_4453.JPG", alt: "Car photo" },
+      { src: "/images/hobby/IMG_5337.JPG", alt: "Car photo" },
+      { src: "/images/hobby/IMG_5561.JPG", alt: "Car photo" },
+      { src: "/images/hobby/IMG_6986.JPG", alt: "Car photo" },
+      { src: "/images/hobby/IMG_8552.JPG", alt: "Car photo" },
+      { src: "/images/hobby/IMG_8584.JPG", alt: "Car photo" },
+    ],
   },
 };
 

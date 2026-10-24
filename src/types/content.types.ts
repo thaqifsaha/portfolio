@@ -211,6 +211,11 @@ export interface About extends BasePageConfig {
     title: string;
     /** Description content */
     description: React.ReactNode;
+    /** Photos shown as an auto-playing carousel below the description */
+    images?: Array<{
+      src: string;
+      alt: string;
+    }>;
   };
 }
 

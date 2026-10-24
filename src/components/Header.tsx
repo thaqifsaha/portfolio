@@ -96,12 +96,24 @@ export const Header = () => {
           >
             <Row gap="4" vertical="center" textVariant="body-default-s" suppressHydrationWarning>
               {routes["/"] && (
-                <ToggleButton
-                  prefixIcon="home"
-                  href="/"
-                  aria-label="Home"
-                  selected={pathname === "/"}
-                />
+                <Fragment key="/">
+                  <Row s={{ hide: true }}>
+                    <ToggleButton
+                      prefixIcon="home"
+                      href="/"
+                      label="Home"
+                      selected={pathname === "/"}
+                    />
+                  </Row>
+                  <Row hide s={{ hide: false }}>
+                    <ToggleButton
+                      prefixIcon="home"
+                      href="/"
+                      aria-label="Home"
+                      selected={pathname === "/"}
+                    />
+                  </Row>
+                </Fragment>
               )}
               <Line background="neutral-alpha-medium" vert maxHeight="24" />
               {navItems.map(
