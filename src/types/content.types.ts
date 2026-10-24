@@ -205,6 +205,8 @@ export interface About extends BasePageConfig {
       icon?: IconName;
       /** Path to a logo image, used instead of `icon` when no registered icon fits (e.g. programming language logos) */
       image?: string;
+      /** Visual scale multiplier for logos that render small within the tile (e.g. 1.3 = 30% bigger). Defaults to 1. */
+      scale?: number;
     }>;
   };
   /** Certifications section */

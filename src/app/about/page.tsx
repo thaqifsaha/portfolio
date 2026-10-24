@@ -383,6 +383,7 @@ export default function About() {
                           sizes="120px"
                           alt={item.name}
                           src={item.image}
+                          style={item.scale ? { transform: `scale(${item.scale})` } : undefined}
                         />
                       </Row>
                     ) : item.icon ? (
