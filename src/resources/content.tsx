@@ -200,7 +200,6 @@ const about: About = {
       { src: "/images/hobby/IMG_5561.JPG", alt: "Car photo" },
       { src: "/images/hobby/IMG_6986.JPG", alt: "Car photo" },
       { src: "/images/hobby/IMG_8552.JPG", alt: "Car photo" },
-      { src: "/images/hobby/IMG_8584.JPG", alt: "Car photo" },
     ],
   },
 };

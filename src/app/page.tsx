@@ -456,7 +456,7 @@ export default function Home() {
                       slide: image.src,
                       alt: image.alt,
                     }))}
-                    play={{ auto: true, interval: 10000, controls: true }}
+                    play={{ auto: true, interval: 5000, controls: true }}
                   />
                 </Row>
               )}
